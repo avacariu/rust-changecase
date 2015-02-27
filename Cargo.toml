@@ -3,3 +3,8 @@
 name = "changecase"
 version = "0.0.1"
 authors = ["Andrei Vacariu <andrei@avacariu.me>"]
+license = "MIT"
+description = "A trait and implementation for changing the case of strings."
+license-file = "LICENSE"
+homepage = "https://github.com/vlad003/rust-changecase"
+repository = "https://github.com/vlad003/rust-changecase"
