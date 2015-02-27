@@ -1,0 +1,5 @@
+[package]
+
+name = "rust-changecase"
+version = "0.0.1"
+authors = ["Andrei Vacariu <andrei@avacariu.me>"]
