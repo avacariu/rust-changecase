@@ -11,7 +11,7 @@ pub trait ChangeCase {
     fn to_lowercase(&self) -> Self;
     fn to_capitalized(&self) -> Self;
     fn to_invertedcase(&self) -> Self;
-    fn to_alternatingcase(&self, start_with: Case) -> Self;
+    fn to_altcase(&self, start_with: Case) -> Self;
 }
 
 impl ChangeCase for String {
@@ -89,7 +89,7 @@ impl ChangeCase for String {
         result
     }
 
-    fn to_alternatingcase(&self, start_with: Case) -> String {
+    fn to_altcase(&self, start_with: Case) -> String {
         if self.is_empty() {
             return String::new();
         }
@@ -151,9 +151,9 @@ fn swapped() {
 
 #[test]
 fn alternating() {
-    assert_eq!(String::from_str("SOMETHING").to_alternatingcase(Case::Lower), "sOmEtHiNg");
-    assert_eq!(String::from_str("SOMETHING").to_alternatingcase(Case::Upper), "SoMeThInG");
-    assert_eq!(String::from_str("som3thing").to_alternatingcase(Case::Lower), "sOm3ThInG");
-    assert_eq!(String::from_str("som3thing").to_alternatingcase(Case::Upper), "SoM3tHiNg");
-    assert_eq!(String::from_str("some word").to_alternatingcase(Case::Lower), "sOmE wOrD");
+    assert_eq!(String::from_str("SOMETHING").to_altcase(Case::Lower), "sOmEtHiNg");
+    assert_eq!(String::from_str("SOMETHING").to_altcase(Case::Upper), "SoMeThInG");
+    assert_eq!(String::from_str("som3thing").to_altcase(Case::Lower), "sOm3ThInG");
+    assert_eq!(String::from_str("som3thing").to_altcase(Case::Upper), "SoM3tHiNg");
+    assert_eq!(String::from_str("some word").to_altcase(Case::Lower), "sOmE wOrD");
 }

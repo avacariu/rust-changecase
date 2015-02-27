@@ -24,5 +24,5 @@ What I'm working on:
     assert_eq!(String::from_str("Some").to_lowercase(), "some");
     assert_eq!(String::from_str("Some").to_invertedcase(), "sOME");
     assert_eq!(String::from_str("some thing").to_capitalized(), "Some thing");
-    assert_eq!(String::from_str("Some").to_alternatingcase(Case::Lower), "sOmE");
-    assert_eq!(String::from_str("Some").to_alternatingcase(Case::Upper), "SoMe");
+    assert_eq!(String::from_str("Some").to_altcase(Case::Lower), "sOmE");
+    assert_eq!(String::from_str("Some").to_altcase(Case::Upper), "SoMe");
