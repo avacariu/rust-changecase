@@ -1,4 +1,4 @@
-#![feature(unicode)]
+#![feature(unicode, collections)]
 
 #[derive(Copy)]
 pub enum Case {
