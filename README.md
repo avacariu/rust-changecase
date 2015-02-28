@@ -1,4 +1,4 @@
-# rust-changecase
+# rust-changecase [![Build Status](https://travis-ci.org/vlad003/rust-changecase.svg)](https://travis-ci.org/vlad003/rust-changecase)
 
 Change the case of Strings in Rust.
 
