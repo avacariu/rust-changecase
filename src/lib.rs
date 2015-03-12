@@ -1,4 +1,4 @@
-#![feature(unicode, collections)]
+#![feature(collections)]
 
 #[derive(Copy)]
 pub enum Case {
@@ -24,7 +24,8 @@ impl<'a> ChangeCase for String {
 
         {
             for c in self.chars() {
-                result.push(c.to_uppercase());
+                let upper = c.to_uppercase().next().unwrap();
+                result.push(upper);
             }
         }
 
@@ -40,7 +41,8 @@ impl<'a> ChangeCase for String {
 
         {
             for c in self.chars() {
-                result.push(c.to_lowercase());
+                let lower = c.to_lowercase().next().unwrap();
+                result.push(lower);
             }
         }
 
@@ -56,10 +58,12 @@ impl<'a> ChangeCase for String {
 
         {
             let mut chars = self.chars();
-            result.push(chars.next().unwrap().to_uppercase());
+            let first = chars.next().unwrap().to_uppercase().next().unwrap();
+            result.push(first);
 
             for c in chars {
-                result.push(c.to_lowercase());
+                let lower = c.to_lowercase().next().unwrap();
+                result.push(lower);
             }
         }
 
@@ -77,9 +81,11 @@ impl<'a> ChangeCase for String {
 
             for c in self.chars() {
                 if c.is_uppercase() {
-                    result.push(c.to_lowercase());
+                    let lower = c.to_lowercase().next().unwrap();
+                    result.push(lower);
                 } else if c.is_lowercase() {
-                    result.push(c.to_uppercase());
+                    let upper = c.to_uppercase().next().unwrap();
+                    result.push(upper);
                 } else {
                     result.push(c);
                 }
@@ -103,11 +109,13 @@ impl<'a> ChangeCase for String {
                 if c.is_uppercase() || c.is_lowercase() {
                     match current_case {
                         Case::Upper => {
-                            result.push(c.to_uppercase());
+                            let upper = c.to_uppercase().next().unwrap();
+                            result.push(upper);
                             current_case = Case::Lower;
                         },
                         Case::Lower => {
-                            result.push(c.to_lowercase());
+                            let lower = c.to_lowercase().next().unwrap();
+                            result.push(lower);
                             current_case = Case::Upper;
                         }
                     };
