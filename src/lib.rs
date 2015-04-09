@@ -1,6 +1,6 @@
 #![feature(collections)]
 
-#[derive(Copy)]
+#[derive(Copy, Clone)]
 pub enum Case {
     Upper,
     Lower
