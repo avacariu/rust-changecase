@@ -1,4 +1,3 @@
-#![feature(collections)]
 
 #[derive(Copy, Clone)]
 pub enum Case {
