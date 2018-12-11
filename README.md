@@ -1,4 +1,4 @@
-# rust-changecase [![Build Status](https://travis-ci.org/vlad003/rust-changecase.svg)](https://travis-ci.org/vlad003/rust-changecase)
+# rust-changecase [![Build Status](https://travis-ci.org/avacariu/rust-changecase.svg)](https://travis-ci.org/avacariu/rust-changecase)
 
 Change the case of Strings in Rust. It's also implemented for `&str`. In the
 latter case, it returns a String.
