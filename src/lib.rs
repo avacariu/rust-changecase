@@ -1,4 +1,3 @@
-#![feature(collections)]
 
 #[derive(Copy, Clone)]
 pub enum Case {
@@ -131,58 +130,58 @@ impl<'a> ChangeCase for String {
 
 impl<'a> ChangeCase for &'a str {
     fn to_uppercase(&self) -> String {
-        String::from_str(self).to_uppercase()
+        String::from(*self).to_uppercase()
     }
     fn to_lowercase(&self) -> String {
-        String::from_str(self).to_lowercase()
+        String::from(*self).to_lowercase()
     }
     fn to_capitalized(&self) -> String {
-        String::from_str(self).to_capitalized()
+        String::from(*self).to_capitalized()
     }
     fn to_invertedcase(&self) -> String {
-        String::from_str(self).to_invertedcase()
+        String::from(*self).to_invertedcase()
     }
     fn to_altcase(&self, start_with: Case) -> String {
-        String::from_str(self).to_altcase(start_with)
+        String::from(*self).to_altcase(start_with)
     }
 }
 
 
 #[test]
 fn upper() {
-    assert_eq!(String::from_str("Something").to_uppercase(), "SOMETHING");
-    assert_eq!(String::from_str("sOmEtHiNg").to_uppercase(), "SOMETHING");
-    assert_eq!(String::from_str("word word2").to_uppercase(), "WORD WORD2");
+    assert_eq!(String::from("Something").to_uppercase(), "SOMETHING");
+    assert_eq!(String::from("sOmEtHiNg").to_uppercase(), "SOMETHING");
+    assert_eq!(String::from("word word2").to_uppercase(), "WORD WORD2");
 }
 
 #[test]
 fn lower() {
-    assert_eq!(String::from_str("SOMETHING").to_lowercase(), "something");
-    assert_eq!(String::from_str("sOmEtHiNg").to_lowercase(), "something");
-    assert_eq!(String::from_str("Word WORD2").to_lowercase(), "word word2");
+    assert_eq!(String::from("SOMETHING").to_lowercase(), "something");
+    assert_eq!(String::from("sOmEtHiNg").to_lowercase(), "something");
+    assert_eq!(String::from("Word WORD2").to_lowercase(), "word word2");
 }
 
 #[test]
 fn capitalize() {
-    assert_eq!(String::from_str("SOMETHING").to_capitalized(), "Something");
-    assert_eq!(String::from_str("sOmEtHiNg").to_capitalized(), "Something");
-    assert_eq!(String::from_str("Word WORD2").to_capitalized(), "Word word2");
+    assert_eq!(String::from("SOMETHING").to_capitalized(), "Something");
+    assert_eq!(String::from("sOmEtHiNg").to_capitalized(), "Something");
+    assert_eq!(String::from("Word WORD2").to_capitalized(), "Word word2");
 }
 
 #[test]
 fn swapped() {
-    assert_eq!(String::from_str("SOMETHING").to_invertedcase(), "something");
-    assert_eq!(String::from_str("SoMeThInG").to_invertedcase(), "sOmEtHiNg");
-    assert_eq!(String::from_str("Some WorD2").to_invertedcase(), "sOME wORd2");
+    assert_eq!(String::from("SOMETHING").to_invertedcase(), "something");
+    assert_eq!(String::from("SoMeThInG").to_invertedcase(), "sOmEtHiNg");
+    assert_eq!(String::from("Some WorD2").to_invertedcase(), "sOME wORd2");
 }
 
 #[test]
 fn alternating() {
-    assert_eq!(String::from_str("SOMETHING").to_altcase(Case::Lower), "sOmEtHiNg");
-    assert_eq!(String::from_str("SOMETHING").to_altcase(Case::Upper), "SoMeThInG");
-    assert_eq!(String::from_str("som3thing").to_altcase(Case::Lower), "sOm3ThInG");
-    assert_eq!(String::from_str("som3thing").to_altcase(Case::Upper), "SoM3tHiNg");
-    assert_eq!(String::from_str("some word").to_altcase(Case::Lower), "sOmE wOrD");
+    assert_eq!(String::from("SOMETHING").to_altcase(Case::Lower), "sOmEtHiNg");
+    assert_eq!(String::from("SOMETHING").to_altcase(Case::Upper), "SoMeThInG");
+    assert_eq!(String::from("som3thing").to_altcase(Case::Lower), "sOm3ThInG");
+    assert_eq!(String::from("som3thing").to_altcase(Case::Upper), "SoM3tHiNg");
+    assert_eq!(String::from("some word").to_altcase(Case::Lower), "sOmE wOrD");
 }
 
 #[test]
