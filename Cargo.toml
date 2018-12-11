@@ -1,7 +1,7 @@
 [package]
 
 name = "changecase"
-version = "0.0.6"
+version = "0.0.7"
 authors = ["Andrei Vacariu <andrei@avacariu.me>"]
 license = "MIT"
 description = """
@@ -10,6 +10,6 @@ A trait and implementation for changing the case of Strings and &str.
 It currently supports uppercase, lowercase, alternating case, and inverting
 case. Title case is in the works.
 """
-homepage = "https://github.com/vlad003/rust-changecase"
-repository = "https://github.com/vlad003/rust-changecase"
+homepage = "https://github.com/avacariu/rust-changecase"
+repository = "https://github.com/avacariu/rust-changecase"
 keywords = ["uppercase", "lowercase", "titlecase"]
